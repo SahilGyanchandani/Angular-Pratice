@@ -1,0 +1,11 @@
+<!-- <router-outlet></router-outlet> -->
+<main>
+    <section>
+      <div class="button-container">
+        <!-- <button (click)="redirect()" class="round-button">ChatBot</button> -->
+        <button (click)="toggleChatbot()" class="round-button">Chatbot</button>
+      </div>
+    </section>
+  </main>
+  <app-bot *ngIf="showChatbot"></app-bot>
+

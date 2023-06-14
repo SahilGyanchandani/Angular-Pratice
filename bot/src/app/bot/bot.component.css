@@ -1,0 +1,256 @@
+
+.bot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 20px;
+  width: 26%;
+  height: 80%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.header-container img {
+  height: 35px;
+  width: 35px;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+
+.header-container h2 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.line {
+  color: black;
+}
+
+.button-group {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.button-group .d-flex.justify-content-center {
+  margin-bottom: 10px;
+  gap: 2px;
+}
+
+.button-group .d-flex.justify-content-center1 {
+  margin-bottom: 10px;
+  gap: 5px;
+  justify-content: center;
+}
+
+.button-group .d-flex.justify-content-center1 .btn-navigate1 {
+  padding: 0px 30px;
+}
+
+.button-group .btn-navigate {
+  margin-right: 10px;
+  border-radius: 7px;
+  background-color: white;
+  color: #007bff;
+  border: 1px solid #007bff;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.button-group .btn-navigate:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.button-group .button-container1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-group .btnQuery {
+  border-radius: 7px;
+  background-color: white;
+  color: #007bff;
+  border: 1px solid #007bff;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.button-group .btn {
+  border-radius: 7px;
+  background-color: white;
+  color: #007bff;
+  border: 1px solid #007bff;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.button-group .btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.button-group .btnQuery:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  position: fixed;
+  bottom: 30px;
+  margin-bottom: 10px;
+}
+
+.input-container input {
+  flex-grow: 1;
+  padding: 10px;
+  padding-right: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+ 
+}
+
+.input-container .btn-send {
+  padding: 7px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  
+}
+
+.send-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  height: 40px;
+  background: linear-gradient(269deg, #2541fc 1.77%, #5466f2 99.15%);
+  border-radius: 20px;
+  cursor: pointer;
+  border-color: #007bff;
+}
+
+.send-button img {
+  width: 20px;
+  margin-right: -5px;
+}
+
+
+@media (max-width: 768px) {
+  footer {
+    padding: 5px;
+  }
+}
+
+
+.conversation-container {
+  overflow-y: scroll;
+  height:250px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.user-message {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bot-message {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user-message .message-box,
+.bot-message .message-box {
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 70%;
+  font-weight: 400;
+}
+
+.user-message .message-box {
+  background-color: #d8ecf3;
+  color: #333333;
+  align-self: flex-end;
+}
+
+.bot-message .message-box {
+  background-color: #fff;
+  color: #333333;
+  align-self: flex-start;
+}
+
+.user-message,
+.bot-message {
+  display: flex;
+  gap: 9px;
+}
+
+.user-message img {
+  height: 35px;
+  width: 35px;
+  border-radius: 20px;
+  background: linear-gradient(269deg, #686666 1.77%, #d6d3d6 99.15%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bot-message img {
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: linear-gradient(269deg, #4d0647 1.77%, #5466f2 99.15%);
+}
+
+.logo.right {
+  margin-left: 9px;
+}
+
+.logo.left {
+  margin-right: 9px;
+}
+
+@media (max-width: 768px) {
+  .conversation-container {
+    height: 200px;
+  }
+  
+  .message-box {
+    max-width: 100%;
+  }
+  
+  .logo.right,
+  .logo.left {
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,46 @@
+<main>
+  <section>
+    <div class="bot-container">
+      <form #myForm="ngForm">
+        <div class="header-container">
+          <img src="../assets/Logo.jpg" alt="Logo">
+          <h2 style="color: #0a004d">Legal<span style="color:#5A5A5A">Gen</span></h2>
+        </div>
+        <hr class="line">
+
+        <div class="button-group">
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn-navigate">Login</button>
+            <button type="submit" class="btn-navigate">Sign Up</button>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <div class="d-flex justify-content-center1">
+            <button type="submit" class="btn" (click)="addResearchBook()">Research Book</button>
+            <button type="submit" class="btnQuery" (click)="addSearchQuery()">Search Query</button>
+          </div>
+        </div>
+
+        <div class="conversation-container" #conversationContainer>
+          <div class="message" *ngFor="let message of messages">
+            <div [ngClass]="{'user-message': message.author === 'user', 'bot-message': message.author === 'bot'}">
+              <img *ngIf="message.author === 'bot'" src="../assets/bot.png" alt="Bot Logo" class="logo right">
+              <span class="message-box" [ngClass]="{'right': message.author === 'bot', 'left': message.author === 'user'}">{{ message.content }}</span>
+              <img *ngIf="message.author === 'user'" src="../assets/user.png" alt="User Logo" class="logo left">
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <div class="input-container">
+            <input type="text" name="message" placeholder="Type your message" ngModel (keyup.enter)="onSubmit(myForm)">
+            <button class="send-button" (click)="onSubmit(myForm)">
+              <img src="../assets/send.svg" />
+            </button>
+          </div>
+        </footer>
+      </form>
+    </div>
+  </section>
+</main>
