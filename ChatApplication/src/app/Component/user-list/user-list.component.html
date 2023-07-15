@@ -1,0 +1,23 @@
+<div class="user-list">
+  <ul>
+    <li *ngFor="let user of Users" class="user-item" (click)="getUserConversation(user)">
+      <div class="user-avatar">
+        <img src="../../../assets/Images/user-avatar.png" alt="User Avatar">
+      </div>
+      <div class="user-details">
+        <div class="user-name">{{ user.name }}</div>
+      </div>
+    </li>
+  </ul>
+  
+</div>
+
+<ul>
+  <li *ngFor="let message of Msg">
+    <div>{{message.content}}</div>
+
+  </li>
+</ul>
+
+
+

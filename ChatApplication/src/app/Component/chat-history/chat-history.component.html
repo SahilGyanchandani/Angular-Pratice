@@ -1,0 +1,9 @@
+<div class="conversation-history">
+    <ul>
+      <li *ngFor="let message of Msg " class="message-item">
+        <div class="message-content">{{ message.content }}</div>
+        <div class="message-timestamp">{{ message.timestamp | date:'medium' }}</div>
+      </li>
+    </ul>
+  </div>
+  

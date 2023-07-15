@@ -21,23 +21,38 @@ constructor(private formBuilder: FormBuilder,private regService:LoginServiceServ
 
 ngOnInit()
 {
+  // this.submitted=true;
+  //   this.regisform=new FormGroup({
+  //     Name:new FormControl(null,Validators.required),
+  //     Email:new FormControl(null,[Validators.required,Validators.email]),
+  //     Password:new FormControl(null,[Validators.required,Validators.minLength(5)]),
+  //     PhoneNumber:new FormControl(null,Validators.required)
 
-    this.regisform=new FormGroup({
-      Name:new FormControl(null,Validators.required),
-      Email:new FormControl(null,[Validators.required,Validators.email]),
-      Password:new FormControl(null,[Validators.required,Validators.minLength(5)]),
-      PhoneNumber:new FormControl(null,Validators.required)
+  
 
-    //validations
+  //   //validations
+  // })
+
+
+  this.regisform=this.formBuilder.group({
+    Name:['',Validators.required],
+    Email:['',[Validators.required,Validators.email]],
+    Password:['',[Validators.required,Validators.minLength(5)]],
+    PhoneNumber:['',Validators.required]
   })
 }
 
 onSubmit()
 {
-  
+  this.submitted=true
+
+  if(this.regisform.invalid)
+  {
+    throw new Error("Please Enter Valid Values");
+  }
  this.regService.onReg(this.regisform.value).subscribe(result=> {
-  console.log(result)
-  this.route.navigateByUrl('/login');
+    console.log(result)
+    this.route.navigateByUrl('/login');
  }
   
  );

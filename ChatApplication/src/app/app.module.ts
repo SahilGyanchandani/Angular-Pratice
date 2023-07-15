@@ -9,7 +9,10 @@ import { LoginComponent } from './Component/login/login.component';
 import { NotFoundComponent } from './Component/not-found/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { UserListComponent } from './Component/user-list/user-list.component';
+import { CustomInterceptor } from './Services/custom.interceptor';
+import { ChatHistoryComponent } from './Component/chat-history/chat-history.component';
 
 
 @NgModule({
@@ -18,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationComponent,
     LoginComponent,
     NotFoundComponent,
+    UserListComponent,
+    ChatHistoryComponent,
     
   ],
   imports: [
@@ -29,7 +34,10 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS, useClass:CustomInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,9 +15,9 @@
                         <div class="form-group">
                             <label>Full Name:</label>
             <input type="text"  class="form-control" placeholder="Enter Your Name"
-            formControlName="Name" [ngClass]="{'is-invalid':submitted && regisform.controls['fullName'].errors}">  
-            <div *ngIf="submitted && regisform.controls['fullName'].errors" class="text-danger">
-                <div *ngIf="submitted && regisform.controls['fullName'].errors['required']">
+            formControlName="Name" [ngClass]="{'is-invalid':submitted && regisform.controls['Name'].errors}">  
+            <div *ngIf="submitted && regisform.controls['Name'].errors" class="text-danger">
+                <div *ngIf="submitted && regisform.controls['Name'].errors['required']">
                     Full Name is Required
                 </div>
             </div>
@@ -54,9 +54,9 @@
             <div class="form-group">
             <label>PhoneNumber:</label>
             <input type="text" class="form-control" placeholder="Enter Your PhoneNumber"
-            formControlName="PhoneNumber" [ngClass]="{'is-invalid':submitted && regisform.controls['PhoneNo'].errors}" >
-            <div *ngIf="submitted && regisform.controls['PhoneNo'].errors" class="text-danger">
-                <div *ngIf="submitted && regisform.controls['PhoneNo'].errors['required']">
+            formControlName="PhoneNumber" [ngClass]="{'is-invalid':submitted && regisform.controls['PhoneNumber'].errors}" >
+            <div *ngIf="submitted && regisform.controls['PhoneNumber'].errors" class="text-danger">
+                <div *ngIf="submitted && regisform.controls['PhoneNumber'].errors['required']">
                     Phone No is Required
                 </div>
             </div>

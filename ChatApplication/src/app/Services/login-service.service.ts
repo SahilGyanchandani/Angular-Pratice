@@ -1,17 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { animate } from '@angular/animations';
+
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class LoginServiceService {
-
-  constructor(private http: HttpClient) { }
-
-
-
-
+  constructor(private http: HttpClient) {}
+ 
 
 
   onSubmit(obj: any): Observable<any> {
@@ -23,4 +21,14 @@ export class LoginServiceService {
   onReg(userData : any):Observable<any>{
      return this.http.post<any>('https://localhost:7277/api/UserReg',userData);
   }
+
+  onUserList():Observable<any>{
+    return this.http.get<any>('https://localhost:7277/api/UserReg/GetUser');
+  }
+
+  onMsgHistory(userid:any):Observable<any>{
+    return this.http.get<any>(`https://localhost:7277/api/Message?userId=${userid}`);
+  }
+ 
 }
+
