@@ -9,15 +9,12 @@
       </div>
     </li>
   </ul>
-  
 </div>
 
-<ul>
-  <li *ngFor="let message of Msg">
-    <div>{{message.content}}</div>
-
-  </li>
-</ul>
-
-
-
+<div class="conversation-history">
+  <ul>
+    <li *ngFor="let message of Msg">
+      <div>{{ message.content }}</div>
+    </li>
+  </ul>
+</div>
